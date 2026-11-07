@@ -90,7 +90,7 @@ jobs:
 
       - name: Initialization Values
         run: |
-          echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
+          #echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
           echo "WRT_MARK=${GITHUB_REPOSITORY%%/*}" >> $GITHUB_ENV
           echo "WRT_INFO=${WRT_SOURCE%%/*}" >> $GITHUB_ENV
           echo "WRT_TARGET=$(grep -m 1 -oP '^CONFIG_TARGET_\K[\w]+(?=\=y)' ./Config/$WRT_CONFIG.txt)" >> $GITHUB_ENV
@@ -104,6 +104,7 @@ jobs:
 
           cd ./wrt/ && git checkout a406e8255a13205ca244355590f601610ec8414e
           echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
+          echo "WRT_DATE=$(TZ=UTC-8 date -d @$(git log -1 --format=%ct) +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
 
           # GitHub Action 移除国内下载源
           #PROJECT_MIRRORS_FILE="./scripts/projectsmirrors.json"
@@ -158,13 +159,13 @@ jobs:
           ./scripts/feeds update -a
 
           cd feeds/luci
-          git fetch origin 2a84422e7c999d038b36b9555ba5a3abc4adaa4b
-          git checkout 2a84422e7c999d038b36b9555ba5a3abc4adaa4b
+          git fetch origin b8be76edf8c40f6be96af723ab134ccaff3e2298
+          git checkout b8be76edf8c40f6be96af723ab134ccaff3e2298
           cd ../..
 
           cd feeds/packages
-          git fetch origin 48f0da39a06cadc8b6b1a3d94702f5812c7c0621
-          git checkout 48f0da39a06cadc8b6b1a3d94702f5812c7c0621
+          git fetch origin 24a9a53d20832534f67e148718c23e15ad8f841e
+          git checkout 24a9a53d20832534f67e148718c23e15ad8f841e
           cd ../..
 
           ./scripts/feeds update -i
@@ -247,9 +248,8 @@ jobs:
         with:
           tag_name: ${{env.WRT_KVER}}-${{env.WRT_CONFIG}}-${{env.WRT_INFO}}-${{env.WRT_HASH}}
           files: ./wrt/upload/*.*
-          body: |
-            Commits on May 1, 2026
-            a406e8255a13205ca244355590f601610ec8414e
+          body: |            
+            Commits on：${{env.WRT_DATE}}
 
             这是个平台固件包，内含多个设备！
             请注意选择你需要的设备固件！
