@@ -33,7 +33,7 @@ UPDATE_PACKAGE() {
 	# 克隆 GitHub 仓库 并checkout特定SHA
 	declare -A LOCKED_HASHES=(
 		["homeproxy"]="ec92da1f6d395ed9d9866cf469a827e977f652f8"
-		["aurora"]="5e8ca92084adf6268739dea4268408a6a96f2630"
+		["aurora"]="c43f8b4a424c2d7e31234003818715795974e060"
 		["aurora-config"]="3b15aa3bcb39da16378afdb0f8ce2fa139a48e5b"
 	)
 
