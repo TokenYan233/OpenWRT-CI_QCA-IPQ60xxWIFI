@@ -90,7 +90,7 @@ jobs:
 
       - name: Initialization Values
         run: |
-          #echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
+          # echo "WRT_DATE=$(TZ=UTC-8 date +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
           echo "WRT_MARK=${GITHUB_REPOSITORY%%/*}" >> $GITHUB_ENV
           echo "WRT_INFO=${WRT_SOURCE%%/*}" >> $GITHUB_ENV
           echo "WRT_TARGET=$(grep -m 1 -oP '^CONFIG_TARGET_\K[\w]+(?=\=y)' ./Config/$WRT_CONFIG.txt)" >> $GITHUB_ENV
@@ -102,15 +102,16 @@ jobs:
         run: |
           git clone --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
 
-          cd ./wrt/ && git checkout b3a261a4ae9bff5b4ab075887c09eb58f3131169
+          cd ./wrt/ && git fetch origin 18763a19f376c0c205c691cfb50d34f67b400647
+          git checkout 18763a19f376c0c205c691cfb50d34f67b400647
           echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
           echo "WRT_DATE=$(TZ=UTC-8 date -d @$(git log -1 --format=%ct) +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
 
           # GitHub Action 移除国内下载源
-          #PROJECT_MIRRORS_FILE="./scripts/projectsmirrors.json"
-          #if [ -f "$PROJECT_MIRRORS_FILE" ]; then
+          # PROJECT_MIRRORS_FILE="./scripts/projectsmirrors.json"
+          # if [ -f "$PROJECT_MIRRORS_FILE" ]; then
           #  sed -i '/.cn\//d; /tencent/d; /aliyun/d' "$PROJECT_MIRRORS_FILE"
-          #fi
+          # fi
 
       - name: Check Scripts
         run: |
@@ -159,13 +160,13 @@ jobs:
           ./scripts/feeds update -a
 
           cd feeds/luci
-          git fetch origin adc898b447eb4ee8023398182f5d0de2e8817e81
-          git checkout adc898b447eb4ee8023398182f5d0de2e8817e81
+          git fetch origin b8e9980539219279d8f03c40bc0308b94b86a7c2
+          git checkout b8e9980539219279d8f03c40bc0308b94b86a7c2
           cd ../..
 
           cd feeds/packages
-          git fetch origin 6d68ffeb270860be5d73ee2898d58e7c6019d9a4
-          git checkout 6d68ffeb270860be5d73ee2898d58e7c6019d9a4
+          git fetch origin 84f4bb9515e4d12ebcc83dc9ba75d80cdfa21e18
+          git checkout 84f4bb9515e4d12ebcc83dc9ba75d80cdfa21e18
           cd ../..
 
           ./scripts/feeds update -i
