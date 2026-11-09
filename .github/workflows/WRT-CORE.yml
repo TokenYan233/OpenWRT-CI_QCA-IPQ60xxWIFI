@@ -161,13 +161,13 @@ jobs:
           ./scripts/feeds update -a
 
           cd feeds/luci
-          git fetch origin b8e9980539219279d8f03c40bc0308b94b86a7c2
-          git checkout b8e9980539219279d8f03c40bc0308b94b86a7c2
+          git fetch origin 534452526bd1f5876aa5adb6951a341c5279a83f
+          git checkout 534452526bd1f5876aa5adb6951a341c5279a83f
           cd ../..
 
           cd feeds/packages
-          git fetch origin 84f4bb9515e4d12ebcc83dc9ba75d80cdfa21e18
-          git checkout 84f4bb9515e4d12ebcc83dc9ba75d80cdfa21e18
+          git fetch origin 47f3749387616b729f664abeb3ebd176b7014fff
+          git checkout 47f3749387616b729f664abeb3ebd176b7014fff
           cd ../..
 
           ./scripts/feeds update -i
