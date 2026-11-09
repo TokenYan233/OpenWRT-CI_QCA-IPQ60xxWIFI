@@ -104,6 +104,7 @@ jobs:
 
           cd ./wrt/ && git fetch origin 18763a19f376c0c205c691cfb50d34f67b400647
           git checkout 18763a19f376c0c205c691cfb50d34f67b400647
+
           echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
           echo "WRT_DATE=$(TZ=UTC-8 date -d @$(git log -1 --format=%ct) +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
 
@@ -170,7 +171,6 @@ jobs:
           cd ../..
 
           ./scripts/feeds update -i
-
           ./scripts/feeds install -a
 
       - name: Custom Packages
