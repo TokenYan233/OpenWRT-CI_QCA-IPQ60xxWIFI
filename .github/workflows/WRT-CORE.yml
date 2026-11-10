@@ -162,13 +162,13 @@ jobs:
           ./scripts/feeds update -a
 
           cd feeds/luci
-          git fetch origin 6bcf30cb319f36414a8dfaffa35b6e249a2cac02
-          git checkout 6bcf30cb319f36414a8dfaffa35b6e249a2cac02
+          git fetch origin 15b34e7a8a477f90dcac512e5e5354b62529596c
+          git checkout 15b34e7a8a477f90dcac512e5e5354b62529596c
           cd ../..
 
           cd feeds/packages
-          git fetch origin 95d9b913a278057ee0f1e5d10fa768d237075a40
-          git checkout 95d9b913a278057ee0f1e5d10fa768d237075a40
+          git fetch origin b70e4e47acc719475a72f1b0f8a5b827b645dae4
+          git checkout b70e4e47acc719475a72f1b0f8a5b827b645dae4
           cd ../..
 
           ./scripts/feeds update -i
