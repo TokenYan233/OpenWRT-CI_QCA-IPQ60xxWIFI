@@ -102,8 +102,8 @@ jobs:
         run: |
           git clone --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
 
-          cd ./wrt/ && git fetch origin 1f5215e311f319880f815064eebc37c3f0ea7bd8
-          git checkout 1f5215e311f319880f815064eebc37c3f0ea7bd8
+          cd ./wrt/ && git fetch origin 5a6aa78e84bff98488af3a6c207732546b56ffb4
+          git checkout 5a6aa78e84bff98488af3a6c207732546b56ffb4
 
           echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
           echo "WRT_DATE=$(TZ=UTC-8 date -d @$(git log -1 --format=%ct) +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
