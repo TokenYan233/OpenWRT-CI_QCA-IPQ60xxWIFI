@@ -66,14 +66,9 @@ jobs:
     steps:
       - name: Checkout Projects
         uses: actions/checkout@main
-
-      - name: Fast APT Mirror
-        uses: vegardit/fast-apt-mirror@v1
-        run: |
-          sudo mkdir -p /etc/apt/apt.conf.d
-          echo 'Acquire::ForceIPv4 "true";' | sudo tee /etc/apt/apt.conf.d/99force-ipv4
-
+        
       - name: Initialization Environment
+        uses: vegardit/fast-apt-mirror@v1
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
