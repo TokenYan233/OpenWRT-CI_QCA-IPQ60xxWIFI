@@ -68,7 +68,6 @@ jobs:
         uses: actions/checkout@main
         
       - name: Initialization Environment
-        uses: vegardit/fast-apt-mirror@v1
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
