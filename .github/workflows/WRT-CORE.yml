@@ -72,10 +72,11 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo -E apt -yqq purge firefox
-          sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list 2>/dev/null || true
-          sudo sed -i 's/azure.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list.d/ubuntu.sources 2>/dev/null || true
-          sudo sed -i 's/azure.archive.ubuntu.com/security.ubuntu.com/g' /etc/apt/sources.list 2>/dev/null || true
-          sudo sed -i 's/azure.archive.ubuntu.com/security.ubuntu.com/g' /etc/apt/sources.list.d/ubuntu.sources 2>/dev/null || true
+
+          sudo mkdir -p /etc/apt/apt.conf.d
+          echo 'Acquire::ForceIPv4 "true";' | sudo tee /etc/apt/apt.conf.d/99force-ipv4
+          sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|mirror://mirrors.ubuntu.com/mirrors.txt|g' /etc/apt/sources.list.d/ubuntu.sources 2>/dev/null || true
+          sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|mirror://mirrors.ubuntu.com/mirrors.txt|g' /etc/apt/sources.list 2>/dev/null || true
 
           sudo -E apt -yqq update
           sudo -E apt -yqq full-upgrade
