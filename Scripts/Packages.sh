@@ -32,9 +32,9 @@ UPDATE_PACKAGE() {
 
 	# 克隆 GitHub 仓库 并checkout特定SHA
 	declare -A LOCKED_HASHES=(
-		["homeproxy"]="29f61caf303cd3a7051e26055dc97fdf4890e2b0"
-		["aurora"]="7e9048c4bba99485d3666f56399a2000e75e5ce1"
-		["aurora-config"]="7bf5db2998bdb3ba15a7b7d0aba430600dbd06a4"
+		["homeproxy"]="edece28a0085f36d469ec82c8d45f562f602db53"
+		["aurora"]="5f4bd6dc5f14ec091814846cd954e6139f7e563d"
+		["aurora-config"]="110aeca1ffab6d2dece43dcd28b15efe00d5ca83"
 	)
 
 	if [[ -n "${LOCKED_HASHES[$PKG_NAME]}" ]]; then
