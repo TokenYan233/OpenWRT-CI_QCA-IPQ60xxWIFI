@@ -67,8 +67,10 @@ jobs:
       - name: Checkout Projects
         uses: actions/checkout@main
 
-      - name: Fast APT Mirror
-        uses: vegardit/fast-apt-mirror@v1
+      - name: Configure Fast APT Mirror
+        uses: vegardit/fast-apt-mirror.sh@v1
+        with:
+          exclude-current: true
 
       - name: Initialization Environment
         env:
