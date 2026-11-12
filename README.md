@@ -3,17 +3,21 @@
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/TokenYan233/OpenWRT-CI_JDC_RE-SS-01?style=for-the-badge&label=Download)](https://github.com/TokenYan233/OpenWRT-CI_JDC_RE-SS-01/releases/latest)
 
-🍝 Release list Kernel Ver.
+🍝 Release list has Kernel Ver.
 
-🪟 Add vlmcsd LuCI app package.
+🪟 Added the vlmcsd LuCI app package.
 
 🚧 sing-box locked tiny 1.12.x skip update.
 
 🛖 HomeProxy uses the default ImmortalWrt package.
 
+📅 The compilation date uses the code submission date.
+
 🎣 Compiled at a pre-update node with an older Linux Kernel.
 
-🎰 `NSS Branches Clone＆checkout SHA from URL:`
+
+
+🎰 `NSS Branches Clone＆checkout historical SHA from URL:`
 
 > base:`https://github.com/VIKINGYFY/immortalwrt/commits/main?author=VIKINGYFY`
 
