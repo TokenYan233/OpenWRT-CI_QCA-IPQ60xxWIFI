@@ -13,12 +13,11 @@
 
 🛖 HomeProxy uses the default ImmortalWrt package.
 
-📅 The compilation date uses the code submission date time.
+📅 The compilation date matches the code commit date time.
 
-🎣 Compiled at a pre-update date node with an older Linux Kernel.
+🎣 Compiled right before kernel updates to keep older kernel snapshots.
 
-
-🎰 `NSS Branches Clone＆checkout historical SHA from URL:`
+🎰 `NSS Branches Clone & checkout historical SHA from URL:`
 
 > base:`https://github.com/VIKINGYFY/immortalwrt/commits/main?author=VIKINGYFY`
 
