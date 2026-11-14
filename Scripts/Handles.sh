@@ -49,8 +49,9 @@ if [ -d *"luci-app-aurora-config"* ]; then
 	echo " " && cd ./luci-app-aurora-config/
 
 	sed -i "s/nav_type '.*'/nav_type 'dropdown'/g; s/struct_radius_base '.*'/struct_radius_base '0.125rem'/g" $(find ./root/usr/share/aurora/ -type f -name "*.template")
+	sed -i 's/50,100/0,100/g' ./htdocs/luci-static/resources/view/aurora/studio.js
 
-	cd $PKG_PATH && echo "theme-aurora has been fixed!"
+	cd $PKG_PATH && echo "theme-aurora-config has been fixed!"
 fi
 
 #修改mini-diskmanager菜单位置
