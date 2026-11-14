@@ -106,8 +106,8 @@ jobs:
           git clone --single-branch --branch $WRT_BRANCH $WRT_REPO ./wrt/
 
           # 切换历史版本
-          cd ./wrt/ && git fetch origin eb3c2feac935745b2cadece4ab3888858aa53b47
-          git checkout eb3c2feac935745b2cadece4ab3888858aa53b47
+          cd ./wrt/ && git fetch origin f9b0ce7650fdcc7f4793256a3ae43c1132e2bc49
+          git checkout f9b0ce7650fdcc7f4793256a3ae43c1132e2bc49
 
           echo "WRT_HASH=$(git log -1 --pretty=format:'%h')" >> $GITHUB_ENV
           echo "WRT_DATE=$(TZ=UTC-8 date -d @$(git log -1 --format=%ct) +"%y.%m.%d-%H.%M.%S")" >> $GITHUB_ENV
@@ -165,13 +165,13 @@ jobs:
           ./scripts/feeds update -a
 
           cd feeds/luci
-          git fetch origin 5fc1fac5684cac6eee2c7fbff78c65b867980dd8
-          git checkout 5fc1fac5684cac6eee2c7fbff78c65b867980dd8
+          git fetch origin 7a64c173af917e1166047ec523ee638f1f520069
+          git checkout 7a64c173af917e1166047ec523ee638f1f520069
           cd ../..
 
           cd feeds/packages
-          git fetch origin e731ba76764082d9db71de60f1ddac43f4114101
-          git checkout e731ba76764082d9db71de60f1ddac43f4114101
+          git fetch origin 0d7620f1ab7dd660c2e285cddbec85372989e591
+          git checkout 0d7620f1ab7dd660c2e285cddbec85372989e591
           cd ../..
 
           ./scripts/feeds update -i
