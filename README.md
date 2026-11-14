@@ -1,13 +1,13 @@
 
 #
 
-🛝 `Kernel:` NSS_6.12.50-C91B697 ▶️ NSS_6.18.55-F9B0CE7 ⏩ PPE_6.18.55-5CD11F1
-
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/TokenYan233/OpenWRT-CI_QCA-IPQ60xxWIFI?style=for-the-badge&label=Download)](https://github.com/TokenYan233/OpenWRT-CI_QCA-IPQ60xxWIFI/releases/latest)
+
+🛝 `Kernel:` NSS_6.12.50-C91B697 ▶️ NSS_6.18.55-F9B0CE7 ⏩ PPE_6.18.55-5CD11F1
 
 🍝 Release list has Kernel Ver.
 
-🪟 Added the vlmcsd LuCI app package.
+🪟 Add the vlmcsd LuCI app package.
 
 🚧 sing-box locked tiny 1.12.x skip update.
 
