@@ -31,7 +31,7 @@
 
 > config:`https://github.com/eamonxg/luci-app-aurora-config/commits?author=eamonxg`
 
-🛝 Qualcomm Network Subsystem (NSS) ▶️ NSS 6.18.55 F9B0CE7 ⏩ Packet Processing Engine (PPE).
+🛝 `Kernel:` NSS_6.12.50-C91B697 ▶️ NSS_6.18.55-F9B0CE7 ⏩ PPE_6.18.55-5CD11F1
 
 #
 
